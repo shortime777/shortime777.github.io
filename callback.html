@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shortime - TikTok 연결</title>
+<style>body{margin:0;font-family:-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:#0d0d10;color:#f2f2f2}
+main{max-width:640px;margin:0 auto;padding:64px 20px}h1{font-size:28px}textarea{width:100%;height:120px;font-size:15px;border-radius:10px;padding:12px;box-sizing:border-box}
+button{margin-top:12px;font-size:17px;padding:12px 20px;border:0;border-radius:10px;background:#ffd23f;font-weight:700;cursor:pointer}</style></head>
+<body><main>
+<h1 id="t">TikTok 연결</h1>
+<p id="m">아래 주소 전체를 복사해서 Claude에게 보내 주세요.</p>
+<textarea id="u" readonly></textarea>
+<button onclick="navigator.clipboard.writeText(document.getElementById('u').value);this.textContent='복사됨'">주소 복사</button>
+<script>
+document.getElementById('u').value = location.href;
+var q = new URLSearchParams(location.search);
+if (q.get('error')) { document.getElementById('t').textContent = '연결 실패'; document.getElementById('m').textContent = q.get('error') + ' ' + (q.get('error_description') || ''); }
+else if (!q.get('code')) { document.getElementById('m').textContent = 'TikTok 연결 후 돌아오는 페이지입니다.'; }
+</script>
+</main></body></html>

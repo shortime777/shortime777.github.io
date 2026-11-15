@@ -59,6 +59,12 @@ def post_ig(q):
         cid = call(G, f"{IG}/media", "POST", media_type="CAROUSEL", children=",".join(kids), caption=q["caption"])["id"]
     wait(G, cid, "status_code")
     mid = call(G, f"{IG}/media_publish", "POST", creation_id=cid)["id"]
+    for c in q.get("comments", [])[:2]:  # 게시 직후 우리 계정 댓글 2개(보충 정보 + 참여 질문)
+        try:
+            time.sleep(5)
+            call(G, f"{mid}/comments", "POST", message=c)
+        except Exception as e:
+            print("comment failed:", e)
     return call(G, mid, fields="permalink").get("permalink")
 
 

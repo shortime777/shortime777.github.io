@@ -1,13 +1,184 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Shortime</title>
-<style>body{margin:0;font-family:-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:#0d0d10;color:#f2f2f2;line-height:1.7}
-main{max-width:720px;margin:0 auto;padding:64px 20px}h1{font-size:40px;margin:0 0 8px}p{color:#c9c9cf}a{color:#ffd23f}
-.links{margin-top:32px;display:flex;gap:20px;flex-wrap:wrap}</style></head>
-<body><main>
-<h1>Shortime</h1>
-<p>Shortime(@shortime777)은 영화 추천, 영화 소식, 랭킹 카드를 만드는 영화 콘텐츠 계정입니다.</p>
-<p>Shortime (@shortime777) is a movie content account that creates movie recommendations, film news and ranking cards.</p>
-<p><b>shortime-upload</b> is a personal tool used only by the Shortime account owner to publish its own image posts to its own TikTok and Instagram accounts.</p>
-<div class="links"><a href="https://www.instagram.com/shortime777/">Instagram @shortime777</a><a href="terms.html">이용약관 Terms of Service</a><a href="privacy.html">개인정보처리방침 Privacy Policy</a></div>
-</main></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shortime – Short stories, made simple</title>
+<meta name="description" content="Shortime is an independent creator studio that turns trending stories and useful everyday information into short card posts and short videos for Instagram and TikTok.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="Shortime">
+<meta property="og:description" content="Short stories, made simple.">
+<meta property="og:image" content="https://shortime777.github.io/icon-512.png">
+<style>
+:root{--bg:#0d0d10;--panel:#17161f;--line:#2a2836;--text:#f2f2f2;--sub:#b9b8c6;--accent:#ffd23f;--accent2:#7c5cff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Malgun Gothic",sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:10;background:rgba(13,13,16,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--text)}
+.brand img{width:34px;height:34px;border-radius:8px}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:15px}
+.nav ul a{color:var(--sub)}
+.nav ul a:hover{color:var(--text);text-decoration:none}
+.hero{padding:88px 0 72px;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center}
+.hero h1{font-size:52px;line-height:1.15;margin:0 0 18px;letter-spacing:-1px}
+.hero h1 span{color:var(--accent)}
+.hero p{font-size:19px;color:var(--sub);margin:0 0 28px}
+.hero .logo{width:100%;max-width:340px;justify-self:center;border-radius:64px;box-shadow:0 30px 80px rgba(124,92,255,.25)}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 22px;border-radius:12px;font-weight:700;font-size:16px}
+.btn.primary{background:var(--accent);color:#111}
+.btn.ghost{border:1px solid var(--line);color:var(--text)}
+.btn:hover{text-decoration:none;opacity:.9}
+section{padding:72px 0;border-top:1px solid var(--line)}
+section h2{font-size:34px;margin:0 0 10px;letter-spacing:-.5px}
+section .lead{color:var(--sub);font-size:18px;margin:0 0 36px;max-width:720px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px}
+.card .ic{font-size:30px;margin-bottom:10px}
+.card h3{margin:0 0 8px;font-size:20px}
+.card p{margin:0;color:var(--sub);font-size:15.5px}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.steps .card{position:relative;padding-top:54px}
+.steps .card:before{counter-increment:s;content:counter(s);position:absolute;top:20px;left:26px;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#111;font-weight:800;font-size:14px;display:flex;align-items:center;justify-content:center}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+.stat{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:28px 12px}
+.stat b{display:block;font-size:34px;color:var(--accent)}
+.stat span{color:var(--sub);font-size:15px}
+details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;font-size:17px}
+details p{color:var(--sub);margin:12px 0 0}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+footer{border-top:1px solid var(--line);padding:36px 0 48px;color:var(--sub);font-size:14px}
+footer .row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:var(--sub);margin-right:18px}
+.ko{color:#8f8e9c;font-size:.92em}
+@media(max-width:860px){
+ .nav ul{display:none}
+ body{overflow-x:hidden}
+ .hero{grid-template-columns:minmax(0,1fr);padding:56px 20px 48px;text-align:center}
+ .hero>*{min-width:0}
+ .hero h1{font-size:38px}
+ .btns{justify-content:center}
+ .hero .logo{max-width:220px;border-radius:44px;grid-row:1}
+ .grid,.steps,.stats,.contact{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#top"><img src="icon-192.png" alt="Shortime logo">Shortime</a>
+  <ul>
+   <li><a href="#about">About</a></li>
+   <li><a href="#content">Content</a></li>
+   <li><a href="#how">How we work</a></li>
+   <li><a href="#tool">Publishing tool</a></li>
+   <li><a href="#faq">FAQ</a></li>
+   <li><a href="#contact">Contact</a></li>
+  </ul>
+ </div>
+</header>
+
+<main id="top">
+ <div class="wrap hero">
+  <div>
+   <h1>Short stories,<br><span>made simple.</span></h1>
+   <p>Shortime is an independent creator studio. We turn the day's most talked-about stories and genuinely useful everyday information into short card posts and short videos you can read in under a minute.</p>
+   <p class="ko">숏타임은 그날 가장 화제가 된 이야기와 알아 두면 좋은 생활 정보를 1분 안에 읽을 수 있는 카드와 짧은 영상으로 만드는 1인 크리에이터 스튜디오입니다.</p>
+   <div class="btns">
+    <a class="btn primary" href="https://www.instagram.com/shortime777/">Follow on Instagram</a>
+    <a class="btn ghost" href="#content">See what we make</a>
+   </div>
+  </div>
+  <img class="logo" src="icon-512.png" alt="Shortime app icon">
+ </div>
+
+ <section id="about">
+  <div class="wrap">
+   <h2>About Shortime</h2>
+   <p class="lead">People scroll fast. We believe a good story or a useful fact should still be easy to understand at a glance. Every post is written, designed and checked by hand before it goes out.</p>
+   <div class="stats">
+    <div class="stat"><b>Daily</b><span>new posts every day</span></div>
+    <div class="stat"><b>8 slides</b><span>a whole story in one swipe</span></div>
+    <div class="stat"><b>&lt; 60 s</b><span>to read or watch each post</span></div>
+   </div>
+  </div>
+ </section>
+
+ <section id="content">
+  <div class="wrap">
+   <h2>What we make</h2>
+   <p class="lead">Three kinds of posts, each built for quick reading on a phone.</p>
+   <div class="grid">
+    <div class="card"><div class="ic">📰</div><h3>Trending stories</h3><p>The day's most discussed news and community stories, summarized slide by slide so you get the full picture without reading ten articles.</p></div>
+    <div class="card"><div class="ic">💡</div><h3>Everyday tips</h3><p>Money, living and statistics rankings: practical information you can actually use, presented as clean one-page charts.</p></div>
+    <div class="card"><div class="ic">🎬</div><h3>Short videos</h3><p>Short vertical videos with clear narration and one-line subtitles, made for TikTok, Reels and Shorts.</p></div>
+   </div>
+  </div>
+ </section>
+
+ <section id="how">
+  <div class="wrap">
+   <h2>How we work</h2>
+   <p class="lead">Every post follows the same four steps.</p>
+   <div class="steps">
+    <div class="card"><h3>Pick</h3><p>We choose only topics that many people are already talking about or searching for.</p></div>
+    <div class="card"><h3>Check</h3><p>Facts and numbers are checked against the original reports before writing.</p></div>
+    <div class="card"><h3>Design</h3><p>Each slide is designed in a vertical 4:5 or 9:16 layout for easy reading on a phone.</p></div>
+    <div class="card"><h3>Publish</h3><p>Finished posts are scheduled and published to our own Instagram and TikTok accounts.</p></div>
+   </div>
+  </div>
+ </section>
+
+ <section id="tool">
+  <div class="wrap">
+   <h2>Our publishing tool</h2>
+   <p class="lead">To post on time every day, Shortime uses a small in-house publishing tool. It is used only by the Shortime team, only with Shortime's own accounts. There is no public sign-up and no login on this website.</p>
+   <div class="grid">
+    <div class="card"><div class="ic">🔗</div><h3>Connect</h3><p>The account owner connects Shortime's own TikTok account once through TikTok Login Kit (scopes: user.info.basic, video.publish, video.upload).</p></div>
+    <div class="card"><div class="ic">🖼️</div><h3>Upload</h3><p>Finished photo posts and videos made by Shortime are sent through the TikTok Content Posting API, with a caption and privacy setting chosen by the owner.</p></div>
+    <div class="card"><div class="ic">✅</div><h3>Confirm</h3><p>The tool checks the post status and records the result. Nothing is posted that the owner has not created and reviewed.</p></div>
+   </div>
+   <p class="ko" style="margin-top:24px">게시 도구는 숏타임 운영자만, 숏타임 본인 계정에만 사용합니다. 이 사이트에는 회원가입이나 로그인이 없습니다.</p>
+  </div>
+ </section>
+
+ <section id="faq">
+  <div class="wrap">
+   <h2>FAQ</h2>
+   <details><summary>Who runs Shortime?</summary><p>Shortime is run by an independent creator in Korea. All posts are made in-house.</p></details>
+   <details><summary>Where can I see your posts?</summary><p>On Instagram at <a href="https://www.instagram.com/shortime777/">@shortime777</a> and on our TikTok account.</p></details>
+   <details><summary>Do you collect any data from visitors?</summary><p>No. This website has no sign-up, no login, no forms and no tracking. See our <a href="privacy.html">Privacy Policy</a>.</p></details>
+   <details><summary>Can other people use the publishing tool?</summary><p>No. It is a private tool used only with Shortime's own accounts. See our <a href="terms.html">Terms of Service</a>.</p></details>
+   <details><summary>I found an error or want something removed.</summary><p>Please send us a DM on Instagram. Corrections and removal requests are handled promptly.</p></details>
+  </div>
+ </section>
+
+ <section id="contact">
+  <div class="wrap">
+   <h2>Contact</h2>
+   <p class="lead">Questions, corrections, partnership ideas or rights requests are all welcome.</p>
+   <div class="contact">
+    <div class="card"><div class="ic">💬</div><h3>Instagram DM</h3><p><a href="https://www.instagram.com/shortime777/">@shortime777</a> — the fastest way to reach us.</p></div>
+    <div class="card"><div class="ic">📄</div><h3>Policies</h3><p><a href="terms.html">Terms of Service</a><br><a href="privacy.html">Privacy Policy</a></p></div>
+   </div>
+  </div>
+ </section>
+</main>
+
+<footer>
+ <div class="wrap row">
+  <div>© 2026 Shortime. All rights reserved.</div>
+  <div><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a><a href="https://www.instagram.com/shortime777/">Instagram</a></div>
+ </div>
+</footer>
+</body>
+</html>
